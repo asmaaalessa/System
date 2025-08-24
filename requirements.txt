@@ -35,8 +35,6 @@ PyScreeze==1.0.1
 python-dateutil==2.9.0.post0
 pytweening==1.2.0
 pytz==2025.2
-pywhatkit==5.4
-pywin32==311
 qrcode==8.2
 requests==2.32.4
 requests-oauthlib==2.0.0
