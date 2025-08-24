@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>لوحة الموظف</title>
+</head>
+<body>
+  <h2>إضافة عميل جديد</h2>
+  <form method="post" action="/add">
+    الاسم: <input type="text" name="name" required>
+    الخدمات: <input type="number" name="services" required>
+    <button type="submit">إضافة</button>
+  </form>
+
+  <h2>العملاء</h2>
+  <ul>
+    {% for client in clients %}
+      <li>
+        {{ client[1] }} - خدمات: {{ client[2] }}
+        <br>
+        <img src="/static/qr/client_{{ client[0] }}.png" width="120">
+        <a href="/client/{{ client[0] }}">رابط العميل</a>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

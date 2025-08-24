@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <title>الخدمات المتبقية</title>
+  <style>
+    body{font-family:Tahoma;direction:rtl;text-align:center;background:#f7f7f9;padding:30px}
+    .card{background:#fff;max-width:380px;margin:0 auto;padding:22px;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+    .big{font-size:64px;font-weight:800;margin-top:10px}
+    .muted{color:#666}
+  </style>
+</head>
+<body>
+  <h2>مرحبًا — {{ cid }}</h2>
+  <div class="card">
+    <div>الخدمات المتبقية</div>
+    <div class="big">{{ services }}</div>
+  </div>
+  <p class="muted">هذه الصفحة للعرض فقط. الخصم يتم عبر موظف الاستقبال.</p>
+</body>
+</html>

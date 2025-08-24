@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <title>لوحة الموظف</title>
+  <style>
+    body{font-family:Tahoma;direction:rtl;background:#f7f7f9;padding:26px}
+    .wrap{max-width:900px;margin:0 auto}
+    .card{background:#fff;padding:18px;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.08);margin-bottom:16px}
+    input,button{padding:10px;border-radius:10px;border:1px solid #ddd}
+    button{background:#111;color:#fff;border:0;cursor:pointer;font-weight:700}
+    table{width:100%;border-collapse:collapse;margin-top:10px}
+    th,td{border-bottom:1px solid #eee;padding:8px;text-align:center}
+    .msg{margin-top:8px;font-weight:bold}
+    a{color:#06c;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h2>لوحة الموظف</h2>
+        <a href="/logout">تسجيل الخروج</a>
+      </div>
+      <form method="post" style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;align-items:center">
+        <input name="cid" placeholder="اكتب C001 أو ألصق رابط مثل http://127.0.0.1:5000/client/C001" />
+        <input type="number" name="count" value="1" min="1" />
+        <button type="submit">خصم</button>
+      </form>
+      {% if message %}<div class="msg">{{ message }}</div>{% endif %}
+    </div>
+
+    <div class="card">
+      <h3>قائمة العملاء</h3>
+      <table>
+        <thead><tr><th>Client ID</th><th>الخدمات المتبقية</th><th>QR</th><th>رابط العميل</th></tr></thead>
+        <tbody>
+          {% for cid, data in items %}
+          <tr>
+            <td>{{ cid }}</td>
+            <td>{{ data.services }}</td>
+            <td><img src="/static/qrcodes/{{ cid }}.png" alt="{{ cid }}" width="80"></td>
+            <td><a href="/client/{{ cid }}" target="_blank">/client/{{ cid }}</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
