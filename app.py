@@ -5,7 +5,7 @@ from pathlib import Path
 app = Flask(__name__, static_folder="static", template_folder="templates")
 app.secret_key = "supersecretkey-please-change"  # لأي سيشن
 
-BASE_URL = "https://clientqrsystem.onrender.com"  # الرابط المحلي
+BASE_URL = "https://system-xx1u.onrender.com"  # الرابط المحلي
 CLIENTS_FILE = "clients.json"
 QRCODES_DIR = Path("static/qrcodes")
 USERNAME = "Zhor"
